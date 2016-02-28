@@ -1,0 +1,67 @@
+
+.container-full {
+    margin: 0 auto;
+    width: 100%;
+    background-color: #755638 ;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ul,
+li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+    color: white;    
+}
+
+#side-bar {
+	border-right: 1px solid black;
+	background-color: #4E3229;		  
+}
+
+.filterDiv {
+	background-color: #4E3229;
+	height: 40px;
+	text-align: center;
+	
+}
+
+.filter {
+	width: 100%;
+    height: 30px;
+}
+
+.place {
+	height: 40px;
+	line-height: 40px;
+	padding: 0 30px;
+}
+
+.place:hover {
+	background-color: #755638;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.donuts {
+	padding-top: 10px;
+	color: blue;
+}
+
+#map {
+    height: 100%;
+}
+
+@media screen and (max-width: 1460px) {
+    #side-bar {
+        width: 100%;        
+    }
+    #map {
+        width: 100%;
+    }
+    
+}
