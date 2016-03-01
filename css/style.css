@@ -23,16 +23,10 @@ li {
 	background-color: #4E3229;		  
 }
 
-.filterDiv {
-	background-color: #4E3229;
-	height: 40px;
-	text-align: center;
-	
-}
-
 .filter {
 	width: 100%;
     height: 30px;
+    color:black;
 }
 
 .place {
@@ -58,7 +52,9 @@ li {
 
 @media screen and (max-width: 1460px) {
     #side-bar {
-        width: 100%;        
+        width: 100%; 
+        position: absolute;
+        z-index: 1
     }
     #map {
         width: 100%;
