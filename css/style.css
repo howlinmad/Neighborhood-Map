@@ -18,7 +18,11 @@ li {
     color: white;    
 }
 
-#side-bar {
+.sideBar {
+    width: 16.666%;
+    float:left;
+    position: relative;
+    padding-left: 15px;
 	border-right: 1px solid black;
 	background-color: #4E3229;		  
 }
@@ -46,17 +50,19 @@ li {
 	color: blue;
 }
 
-#map {
-    height: 100%;
+.mapDiv {
+    width: 83.333%;
+    float:left;    
+    height: 100vh;  
 }
 
 @media screen and (max-width: 1460px) {
-    #side-bar {
+    .sideBar {
         width: 100%; 
         position: absolute;
         z-index: 1
     }
-    #map {
+    .mapDiv {
         width: 100%;
     }
     

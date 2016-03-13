@@ -6,7 +6,11 @@ The application uses the Google maps api to show the locations of several poular
 
 It also uses the Foursquare api to provide links to neatby donut shops near each coffee shops.<br />
 
-Get started by clicking [here](http://howlinmad.github.io/Neighborhood-Map/)
+[View Demo](http://howlinmad.github.io/Neighborhood-Map/)
+
+Installation:
+Either clone the repository using GIT, or use the download ZIP link on the right hand side of the screen. Double click the index.html file. 
+
 
 
 

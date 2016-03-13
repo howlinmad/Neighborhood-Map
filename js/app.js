@@ -8,17 +8,15 @@ var sacCoffee = [
 ];
 
 // Initializes the Google Map centered on Sacramento.
-var map;
-var coords;
-var infowindow = new google.maps.InfoWindow({});
+var map, coords, infowindow;
 function initMap() {
 
 	var mapCanvas = document.getElementById('map');
 	var mapOptions = {
 		center: new google.maps.LatLng(38.565764,-121.478851),
 		zoom: 13,
-		mapTypeId: google.maps.MapTypeId.TERRAIN 
-	}
+		mapTypeId:google.maps.MapTypeId.TERRAIN 
+	};
 	map = new google.maps.Map(mapCanvas, mapOptions);
 
 	
@@ -35,9 +33,11 @@ function initMap() {
 			};
 		})(sacCoffee[i]));
 	}
+    infowindow = new google.maps.InfoWindow({});
+    ko.applyBindings(new ViewModel());
 }
 
-initMap();
+
 
 //returns a string that is used to create the html elements of the popup
 function createContent(cafe) {
@@ -56,9 +56,9 @@ function clickData(cafe) {
 	var html = "";
 	$.getJSON(url, function (data) {
         for (var i=0; i < data.response.venues.length; i++) {
-        	html += "<div><a href='https://foursquare.com/v/"+data.response.venues[i].id+"'>"+data.response.venues[i].name+"</a></div>"
+        	html += "<div><a href='https://foursquare.com/v/"+data.response.venues[i].id+"'>"+data.response.venues[i].name+"</a></div>";
         }
-        if(html == "") html = "There are no donuts shops close enough to get to before your coffee got cold."
+        if(html === "") html = "There are no donuts shops close enough to get to before your coffee got cold.";
         infowindow.setContent(createContent(cafe) + html);
 		infowindow.open(map, cafe.marker);
         //error handling
@@ -79,14 +79,13 @@ var ViewModel = function() {
 		sacCoffee.forEach(function(cafe) {
 			if (cafe.name.toLowerCase().indexOf(self.filter().toLowerCase()) > -1) {
 				coffeeArr.push(cafe);
-				cafe.marker.setMap(map);
-			}else cafe.marker.setMap(null);			
+				cafe.marker.setVisible(true);
+			}else cafe.marker.setVisible(false);		
 		});
 		return coffeeArr;
 	});	
 	self.select = function(parent) {
 		clickData(parent);
-	}
+	};
 };
 
-ko.applyBindings(new ViewModel());
