@@ -89,3 +89,8 @@ var ViewModel = function() {
 	};
 };
 
+var mapLoadError = function() {
+    var mapDiv = $('#map');
+    mapDiv.append('<h1 style="background-color:white;padding:15px;">Error. Google Maps was unable to load</h1>');    
+}
+
